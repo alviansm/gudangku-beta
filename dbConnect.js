@@ -3,7 +3,8 @@ const path = require('path');
 const dotenv = require("dotenv");
 dotenv.config({path: path.resolve(__dirname, './config/dotenv/.env')});
 
-const mongoAtlasUri = process.env.MONGO_URI;
+// heroku vars
+const mongoAtlasUri = process.env.MONGODB_URI;
 
 try {
     // Connect to the MongoDB cluster
