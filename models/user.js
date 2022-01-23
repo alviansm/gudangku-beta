@@ -2,16 +2,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 require('dotenv').config({ path:  path.resolve(__dirname, '../config/dotenv/.env')});
 
-const url = process.env.DB_CONNECT;
-
-mongoose.connect(url)
-    .then( () => {
-        console.log('Connected to database for User')
-    })
-    .catch( (err) => {
-        console.error(`Error connecting to the database. \n${err}`);
-    });
-
 const UserSchema = new mongoose.Schema({
 	fullName: {
 		type: String,

@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const db = require('./dbConnect');
 
 require('dotenv').config;
 require('dotenv').config({ path:  path.resolve(__dirname, './config/dotenv/.env')});
@@ -20,6 +21,8 @@ const itemRouter = require('./routes/itemRouter');
 const userRouter = require('./routes/userRouter');
 
 const app = express();
+
+db;
 
 // passport configuration implementaion
 require('./config/passportStrat')(passport);
