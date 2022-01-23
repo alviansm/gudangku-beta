@@ -1,0 +1,43 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Masuk</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="container d-flex flex-column justify-content-center align-items-center">
+	<div class="row">
+
+		{{#if error}}
+		<p class="lead text-center">{{error}}</p>
+		{{/if}}
+
+		<div class="col-md-6 d-flex flex-column align-items-center">
+			<p class="lead fw-normal text-center fw-bolder">Manajemen barang-barang di gudang Anda dan kunjungi gudang lain untuk berinteraksi</p>
+			<img src="/images/register_illustration.png" class="img-fluid text-center" alt="Website image ilustration">	
+		</div>
+		<div class="col-md-6">			
+			<h4 class="text-center mt-3 fw-bolder">Masuk</h4>
+			<p class="lead fw-normal text-center">Masuk menggunakan email</p>
+
+			<form action="/user/login" method="POST">
+				<div class="mb-3">
+				    <label for="email" class="form-label">Alamat Email</label>
+				    <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email" required>
+				</div>
+				<div class="mb-3">
+				    <label for="password" class="form-label">Kata Sandi</label>
+				    <input type="password" class="form-control" id="password" name="password" placeholder="Kata Sandi" required>
+				</div>
+				<div class="mb-3 form-check">
+					<input type="checkbox" class="form-check-input" id="agreement" name="agreement" required>
+					<label class="form-check-label" for="agreement">Saya setuju dengan ketentuan gudangku.</label>
+				</div>
+				<p>Belum punya akun? <a href="/user/signup">Daftar</a></p>				
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+	</div>
+</section>

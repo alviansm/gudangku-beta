@@ -1,0 +1,44 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/api/item/itemList">Items List</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Item Detail</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="container item-detail">
+  <h1 class="display-6 text-center mt-3 fw-bolder">Rincian Barang</h1>
+
+  {{#each itemDetail}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/images/material_sample.png" class="img-fluid text-center w-75" alt="Item photos">
+      </div>
+      <div class="col-md-6 d-flex flex-column">
+        <p class="lead fw-bolder">Nama Barang: {{name}}</p>
+        <p>Kondisi: <span class="badge bg-success">{{condition}}</span></p>
+        <p>{{description}}</p>
+        <p>Harga: Rp. {{price}}</p>
+        <p>Kuantitas: {{quantity}} <span class="badge bg-info">{{quantityUnit}}</span></p>
+        <p>Manufaktur: {{manufacture}}</p>
+        <p>Kategori: <span class="badge bg-info">{{tags}}</span></p>
+        <div class="my-2">
+          <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Sukai"><i class="fas fa-heart" style="color:white;"></i></button>
+          <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambahkan ke keranjang permintaan"><i class="fas fa-cart-plus"></i></button>
+          <a href="/api/item/itemlist" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kembali ke List Barang"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="mt-2">
+          <span class="badge bg-warning badge-sm">Edit: </span>
+        </div>
+        <div class="my-2">
+          <a href="/api/item/update:{{_id}}" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ubah data barang"><i class="fas fa-edit"></i><a>
+          <a href="/api/item/remove" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus barang"><i class="fas fa-trash-alt"></i><a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</section>

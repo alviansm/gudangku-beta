@@ -1,0 +1,72 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="container d-flex flex-column justify-content-center align-items-center">
+  <h1 class="display-6 text-center mt-3 fw-bolder">Barang Baru</h1>
+  <p class="lead fw-normal text-center">Tambahkan barang baru ke gudang</p>
+
+  <form action="/api/item/add" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nama barang: </label>
+      <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Deskripsi: </label>
+      <textarea id="description" class="form-control" name="description" aria-describedby="descriptionHelp" rows="4" cols="25" maxlength="100"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="condition" class="form-label">Kondisi: </label>
+      <select class="form-select" name="condition">        
+        <option value="new">Baru</option>
+        <option value="good">Baik</option>
+        <option value="second">Bekas</option>
+        <option value="unused">Tidak Terpakai</option>
+        <option value="broken">Rusak</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Lokasi: </label>
+      <input type="text" class="form-control" id="location" name="location">
+    </div>
+    <div class="mb-3">
+      <label for="tags" class="form-label">Tag / Kategori: </label>
+      <input type="text" class="form-control" id="tags" name="tags" aria-describedby="tagsHelp">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Harga barang: </label>
+      <input type="number" class="form-control" id="price" name="price" min="0" max="5000000000" aria-describedby="priceHelp">
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Kuantitas: </label>
+      <input type="number" class="form-control" id="quantity" name="quantity" min="0" max="5000000000" aria-describedby="priceHelp">
+    </div>
+    <div class="mb-3">
+      <label for="quantityUnit" class="form-label">Kuantitas: </label>
+      <select class="form-select" name="quantityUnit">        
+        <option value="gram">Gram</option>
+        <option value="kilogram">Kilogram</option>
+        <option value="quintal">Kuintal</option>
+        <option value="ton">Ton</option>
+        <option value="m3">m3</option>
+        <option value="others">Lainnya</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="manufacture" class="form-label">Manufaktur: </label>
+      <input type="text" class="form-control" id="manufacture" name="manufacture" aria-describedby="manufactureHelp">
+    </div>
+    <div class="mb-3 form-check">
+      <input class="form-check-input" type="checkbox" value="1" name="status" id="flexCheckDefault" required>
+      <label class="form-check-label" for="flexCheckDefault">
+        Saya bertanggung jawab terhadap pengisian form ini.
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>

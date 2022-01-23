@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Error</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="container d-flex flex-column justify-content-center align-items-center">
+  <h1 class="display-6 text-center mt-3 fw-bolder">Terdapat kesalahan :(</h1>
+  <p class="lead fw-normal text-center">{{error}}</p>
+
+  <div class="d-flex flex-row">
+    <div class="alert alert-danger mx-2" role="alert">
+      Kode: {{status}}
+    </div>
+  </div>
+  
+  <p class="lead fw-normal text-center">Kembali ke <a href="/">Beranda</a></p>
+
+  <img src="/images/error2_illustration.png" class="img-fluid text-center" alt="Website image ilustration">
+</section>

@@ -1,0 +1,32 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Items List</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="container">
+  <h1 class="display-6 text-center mt-3 fw-bolder">List Barang</h1>
+  <p class="lead fw-normal text-center">Barang yang tersedia di gudang</p>
+
+  {{#each itemList}}
+  <div class="card my-3">
+    <div class="card-header fw-light">
+      Kategori: {{tags}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title fw-bolder">{{name}}</h5>
+      <p class="card-text lead fw-normal">{{description}}</p>
+      <p class="card-text fw-lighter">Harga: {{price}}</p>
+      <p class="card-text fw-lighter">Manufaktur: {{manufacture}}</p>
+      <a href="/api/item/itemlist/{{_id}}" class="btn btn-primary">Selengkapnya</a>
+      <a href="/api/item/update/{{_id}}" class="btn btn-info">Edit</a>
+      <a href="/api/item/remove" class="btn btn-danger">Hapus</a>
+    </div>
+  </div>
+  {{else}}
+  <p class="text-center">Gudang kosong :(</p>
+  {{/each}}
+</section>
