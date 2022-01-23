@@ -2,6 +2,10 @@
 	background-image: linear-gradient(180deg, rgba(60, 88, 152, .1), rgba(0, 0, 0, .2));
 }
 
+.full-heights {
+    height: 100vh;
+}
+
 .item-detail {
 	height: 100vh;
 }
